@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+<table class="table table-bordered table-hove mt-5">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>IP</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for f in lista %}
+      <tr>
+        <td class="bg-info">{{ f.id }}</td>
+        <td class="bg-info">{{ f.ip}}</td>
+        <td class="bg-info">{{ f.visita }}</td>
+         <!--<td class="bg-info">
+          <a href="/delete_ips/{{ f.id }}" class="btn btn-danger">Eliminar</a>
+        </td>-->
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+{% endblock %}

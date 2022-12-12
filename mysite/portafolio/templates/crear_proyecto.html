@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container p-5">
+  <div class="card mx-3 mt-n5 shadow-lg" style="border-radius: 10px; border-left:8px #007bff solid; border-right: none; border-top:none; border-bottom:none">
+   <div class="card-body">
+     <h4 class="card-title mb-3 text-primary text-uppercase">REGISTRO DE PROYECTOS</h4>
+     <br>
+     <form method="POST">
+      {% csrf_token %}
+       <div class="row">
+         <div class="col">
+           <div class="form-floating mb-3">
+            <label for="floatingTextInput1">Foto (url)</label>
+             <input type="text" class="form-control" id="floatingTextInput1" name="Foto">
+           </div>
+         </div>
+         <div class="col">
+           <div class="form-floating mb-3">
+            <label for="floatingTextInput2">Titulo del Proyecto</label>
+             <input type="text" class="form-control" id="floatingTextInput2" name="Titulo">
+           </div>
+         </div>
+       </div>
+       <div class="row">
+        <div class="col">
+          <div class="form-floating mb-3">
+           <label for="floatingTextInput1">Descripcion</label>
+            <input type="text" class="form-control" id="floatingTextInput1" name="descripcion">
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-floating mb-3">
+           <label for="floatingTextInput2">Tags</label>
+            <input type="text" class="form-control" id="floatingTextInput2" name="tags">
+          </div>
+        </div>
+      </div>
+        <label for="floatingTextInput1">Url github</label>
+         <input type="text" class="form-control" id="floatingTextInput1" name="url">
+       </div>
+       <button type="submit" class="btn btn-primary">Submit</button>
+     </form>
+   </div>
+ </div>
+</div>
+{% endblock content %}

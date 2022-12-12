@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand">Portafolio Alfredo Alvarado</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'get_name' %}">Registro de Proyectos(Formulario)</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'proyectos' %}">Lista de Proyectos</a> <!--puedes usar el metodo en url_for para hacer mas sencillo, te llevara la ruta de ese metodo-->
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'ips' %}">IPs registradas</a> <!--puedes usar el metodo en url_for para hacer mas sencillo, te llevara la ruta de ese metodo-->
+            </li>
+            </ul>
+
+
+
+
+            {% if user.is_authenticated %}
+            <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Log out</a> <!--puedes usar el metodo en url_for para hacer mas sencillo, te llevara la ruta de ese metodo-->
+            </li>
+            </ul>
+            {% else %}
+            <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'register' %}">Sign Up</a> <!--puedes usar el metodo en url_for para hacer mas sencillo, te llevara la ruta de ese metodo-->
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a> <!--puedes usar el metodo en url_for para hacer mas sencillo, te llevara la ruta de ese metodo-->
+            </li>
+            </ul>
+            {% endif %}
+        </ul>
+
+    </div>
+</nav>
